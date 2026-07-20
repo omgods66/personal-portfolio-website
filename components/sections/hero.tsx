@@ -5,12 +5,6 @@ import Image from "next/image";
 import { ArrowRight, Bot, BrainCircuit, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 
-const metrics = [
-  ["42%", "Lead quality lift"],
-  ["3x", "Content velocity"],
-  ["28%", "Lower acquisition cost"]
-];
-
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
@@ -72,36 +66,6 @@ export function Hero() {
               className="aspect-[4/3] h-auto w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-            <div className="glass absolute bottom-0 left-0 right-0 rounded-b-lg rounded-t-none border-x-0 border-b-0 p-3 sm:bottom-5 sm:left-auto sm:right-5 sm:w-[22rem] sm:rounded-lg sm:border">
-              <div className="mb-3 flex items-center justify-between">
-                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">Growth Console</span>
-                <span className="h-2.5 w-2.5 rounded-full bg-cyan shadow-glow" />
-              </div>
-              <div className="grid gap-2">
-                {["Audience intelligence", "AI content workflow", "Marketing automation", "SEO opportunity map"].map(
-                  (item, index) => (
-                    <motion.div
-                      key={item}
-                      initial={{ opacity: 0, x: -18 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.35 + index * 0.12 }}
-                      className="flex items-center justify-between rounded-md border border-white/10 bg-ink/60 px-3 py-2"
-                    >
-                      <span className="text-sm text-white/75">{item}</span>
-                      <span className="text-sm font-bold text-cyan">{88 + index * 3}%</span>
-                    </motion.div>
-                  )
-                )}
-              </div>
-              <div className="mt-3 grid grid-cols-3 gap-2">
-                {metrics.map(([value, label]) => (
-                  <div key={label} className="rounded-md border border-white/10 bg-white/[0.05] p-3">
-                    <p className="font-heading text-xl font-bold text-white">{value}</p>
-                    <p className="mt-1 text-[11px] leading-4 text-white/50">{label}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>

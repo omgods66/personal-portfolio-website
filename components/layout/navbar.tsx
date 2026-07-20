@@ -28,7 +28,7 @@ export function Navbar() {
         scrolled ? "border-b border-white/10 bg-ink/82 shadow-2xl backdrop-blur-xl" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="flex items-center"
@@ -37,10 +37,10 @@ export function Navbar() {
           <Image
             src="/logo-transparent.png"
             alt="Om Prakash logo"
-            width={250}
-            height={140}
+            width={340}
+            height={190}
             priority
-            className="h-14 w-auto object-contain sm:h-16"
+            className="h-20 w-auto object-contain sm:h-24"
           />
         </Link>
 
