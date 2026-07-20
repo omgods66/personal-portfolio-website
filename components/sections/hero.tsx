@@ -72,7 +72,7 @@ export function Hero() {
               className="aspect-[4/3] h-auto w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-            <div className="glass absolute bottom-4 left-4 right-4 rounded-lg p-4 sm:bottom-6 sm:left-6 sm:right-auto sm:w-[24rem]">
+            <div className="glass absolute bottom-0 left-0 right-0 rounded-b-lg rounded-t-none border-x-0 border-b-0 p-3 sm:bottom-5 sm:left-auto sm:right-5 sm:w-[22rem] sm:rounded-lg sm:border">
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">Growth Console</span>
                 <span className="h-2.5 w-2.5 rounded-full bg-cyan shadow-glow" />
@@ -85,7 +85,7 @@ export function Hero() {
                       initial={{ opacity: 0, x: -18 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.35 + index * 0.12 }}
-                      className="flex items-center justify-between rounded-md border border-white/10 bg-ink/55 px-3 py-2"
+                      className="flex items-center justify-between rounded-md border border-white/10 bg-ink/60 px-3 py-2"
                     >
                       <span className="text-sm text-white/75">{item}</span>
                       <span className="text-sm font-bold text-cyan">{88 + index * 3}%</span>
