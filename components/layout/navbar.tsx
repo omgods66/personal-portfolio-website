@@ -28,15 +28,19 @@ export function Navbar() {
         scrolled ? "border-b border-white/10 bg-ink/82 shadow-2xl backdrop-blur-xl" : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center" aria-label="Om Prakash home">
+      <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="flex items-center rounded-md bg-white px-3 py-2 shadow-glow"
+          aria-label="Om Prakash home"
+        >
           <Image
-            src="/logo.png"
+            src="/om-prakash-logo.png"
             alt="Om Prakash logo"
-            width={190}
-            height={72}
+            width={260}
+            height={118}
             priority
-            className="h-14 w-auto object-contain"
+            className="h-16 w-auto object-contain sm:h-20"
           />
         </Link>
 
