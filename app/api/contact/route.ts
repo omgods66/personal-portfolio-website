@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { sendContactEmail } from "@/lib/mailer";
 import { site } from "@/lib/constants";
 import { contactSchema } from "@/lib/validation";
 
@@ -15,26 +14,26 @@ export async function POST(request: Request) {
       );
     }
 
-    const result = await sendContactEmail(parsed.data);
+    const submitFormResponse = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
+        name: parsed.data.name,
+        email: parsed.data.email,
+        phone: parsed.data.phone,
+        subject: parsed.data.subject,
+        message: parsed.data.message,
+        _subject: `Portfolio inquiry: ${parsed.data.subject}`,
+        _template: "table",
+        _captcha: "false"
+      })
+    });
 
-    if (result.skipped) {
-      const submitFormResponse = await fetch(`https://formsubmit.co/ajax/${site.email}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify({
-          ...parsed.data,
-          _subject: `Portfolio inquiry: ${parsed.data.subject}`,
-          _template: "table",
-          _captcha: "false"
-        })
-      });
-
-      if (!submitFormResponse.ok) {
-        return NextResponse.json({ message: "Unable to submit the form right now." }, { status: 502 });
-      }
+    if (!submitFormResponse.ok) {
+      return NextResponse.json({ message: "Unable to submit the form right now." }, { status: 502 });
     }
 
     return NextResponse.json({

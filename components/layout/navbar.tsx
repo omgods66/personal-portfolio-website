@@ -31,16 +31,16 @@ export function Navbar() {
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center rounded-md bg-white px-3 py-2 shadow-glow"
+          className="flex items-center"
           aria-label="Om Prakash home"
         >
           <Image
-            src="/om-prakash-logo.png"
+            src="/logo-transparent.png"
             alt="Om Prakash logo"
-            width={260}
-            height={118}
+            width={250}
+            height={140}
             priority
-            className="h-16 w-auto object-contain sm:h-20"
+            className="h-14 w-auto object-contain sm:h-16"
           />
         </Link>
 

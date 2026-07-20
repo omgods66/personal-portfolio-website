@@ -37,7 +37,7 @@ export function Footer() {
               <Mail className="h-4 w-4" />
               {site.email}
             </a>
-            <a href={`tel:${site.phone}`} className="flex items-center gap-3 hover:text-cyan">
+            <a href={`tel:${site.phoneHref}`} className="flex items-center gap-3 hover:text-cyan">
               <Phone className="h-4 w-4" />
               {site.phone}
             </a>

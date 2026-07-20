@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, Bot, BrainCircuit, Sparkles } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button-link";
 
@@ -61,13 +62,22 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.15 }}
           className="relative"
         >
-          <div className="glass rounded-lg p-5 sm:p-7">
-            <div className="rounded-lg border border-white/10 bg-midnight/70 p-5">
-              <div className="mb-5 flex items-center justify-between">
-                <span className="text-sm font-semibold uppercase tracking-[0.22em] text-cyan">Growth Console</span>
-                <span className="h-3 w-3 rounded-full bg-cyan shadow-glow" />
+          <div className="relative overflow-hidden rounded-lg border border-white/10 bg-white/[0.04] shadow-glow">
+            <Image
+              src="/hero-photo.png"
+              alt="Om Prakash planning digital marketing strategy"
+              width={1408}
+              height={1110}
+              priority
+              className="aspect-[4/3] h-auto w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+            <div className="glass absolute bottom-4 left-4 right-4 rounded-lg p-4 sm:bottom-6 sm:left-6 sm:right-auto sm:w-[24rem]">
+              <div className="mb-3 flex items-center justify-between">
+                <span className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan">Growth Console</span>
+                <span className="h-2.5 w-2.5 rounded-full bg-cyan shadow-glow" />
               </div>
-              <div className="grid gap-4">
+              <div className="grid gap-2">
                 {["Audience intelligence", "AI content workflow", "Marketing automation", "SEO opportunity map"].map(
                   (item, index) => (
                     <motion.div
@@ -75,22 +85,22 @@ export function Hero() {
                       initial={{ opacity: 0, x: -18 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.35 + index * 0.12 }}
-                      className="flex items-center justify-between rounded-md border border-white/10 bg-white/[0.04] p-4"
+                      className="flex items-center justify-between rounded-md border border-white/10 bg-ink/55 px-3 py-2"
                     >
-                      <span className="text-white/75">{item}</span>
+                      <span className="text-sm text-white/75">{item}</span>
                       <span className="text-sm font-bold text-cyan">{88 + index * 3}%</span>
                     </motion.div>
                   )
                 )}
               </div>
-            </div>
-            <div className="mt-5 grid gap-3 sm:grid-cols-3">
-              {metrics.map(([value, label]) => (
-                <div key={label} className="rounded-md border border-white/10 bg-white/[0.04] p-4">
-                  <p className="font-heading text-2xl font-bold text-white">{value}</p>
-                  <p className="mt-1 text-sm text-white/50">{label}</p>
-                </div>
-              ))}
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {metrics.map(([value, label]) => (
+                  <div key={label} className="rounded-md border border-white/10 bg-white/[0.05] p-3">
+                    <p className="font-heading text-xl font-bold text-white">{value}</p>
+                    <p className="mt-1 text-[11px] leading-4 text-white/50">{label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

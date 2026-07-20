@@ -32,7 +32,7 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5 text-cyan" />
                     {site.email}
                   </a>
-                  <a href={`tel:${site.phone}`} className="flex items-center gap-3 hover:text-cyan">
+                  <a href={`tel:${site.phoneHref}`} className="flex items-center gap-3 hover:text-cyan">
                     <Phone className="h-5 w-5 text-cyan" />
                     {site.phone}
                   </a>
